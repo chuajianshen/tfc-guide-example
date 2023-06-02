@@ -29,25 +29,11 @@ resource "aws_instance" "ubuntu" {
     Name = var.instance_name
   }
 }
-resource "aws_s3_bucket_website_configuration" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket" "example" {
+  bucket = "my-tf-test-bucket"
 
-  index_document {
-    suffix = "index.html"
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
   }
-
-  error_document {
-    key = "error.html"
-  }
-
-  routing_rules = <<EOF
-[{
-    "Condition": {
-        "KeyPrefixEquals": "docs/"
-    },
-    "Redirect": {
-        "ReplaceKeyPrefixWith": ""
-    }
-}]
-EOF
 }
