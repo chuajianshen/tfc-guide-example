@@ -29,7 +29,7 @@ resource "aws_instance" "ubuntu" {
     Name = var.instance_name
   }
 }
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "example-today" {
   bucket = "my-tf-test-bucket"
 
   tags = {
