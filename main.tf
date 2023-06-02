@@ -30,10 +30,10 @@ resource "aws_instance" "ubuntu" {
   }
 }
 resource "aws_s3_bucket" "example-today" {
-  bucket = "my-tf-test-bucket"
+  bucket = "shen"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "shen"
     Environment = "Dev"
   }
 }
