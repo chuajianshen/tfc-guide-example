@@ -29,11 +29,11 @@ resource "aws_instance" "ubuntu" {
     Name = var.instance_name
   }
 }
-resource "shenbucket622023" "shenbucket622023" {
-  bucket = "shen"
+resource "aws_s3_bucket" "shenbucket622023" {
+  bucket = "shenbucket622023"
 
   tags = {
-    Name        = "shen"
+    Name        = "shenbucket622023"
     Environment = "Dev"
   }
 }
